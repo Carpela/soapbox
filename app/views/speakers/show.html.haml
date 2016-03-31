@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @speaker.name
+%p
+  %b Sector:
+  = @speaker.sector
+%p
+  %b Description:
+  = @speaker.description
+%p
+  %b Phone:
+  = @speaker.phone
+%p
+  %b Email:
+  = @speaker.email
+
+= link_to 'Edit', edit_speaker_path(@speaker)
+\|
+= link_to 'Back', speakers_path
