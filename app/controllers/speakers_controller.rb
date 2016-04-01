@@ -4,7 +4,11 @@ class SpeakersController < ApplicationController
   # GET /speakers
   # GET /speakers.json
   def index
-    @speakers = Speaker.all
+    if params[:search].present? 
+      @speakers = Speaker.search(params[:search])
+    else
+      @speakers = Speaker.all
+    end
   end
 
   # GET /speakers/1

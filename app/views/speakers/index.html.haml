@@ -1,7 +1,14 @@
 .page-header
-  = link_to new_speaker_path, class: 'btn btn-primary' do
-    %span.glyphicon.glyphicon-plus
-    New Speaker
+  .col-md-4.pull-right
+    = link_to new_speaker_path, class: 'btn btn-xs btn-primary' do
+      %span.glyphicon.glyphicon-plus
+      New Speaker
+    = form_tag(speakers_path, :method => "get", id: "search-form") do
+      = text_field_tag :search, params[:search], placeholder: "Search Speakers"
+      = submit_tag "Search", :name => nil, class: 'btn btn-xs'
+    
+  
+
   %h1 Listing speakers
 
 .table-responsive
@@ -17,11 +24,12 @@
     %tbody
       - @speakers.each do |speaker|
         %tr
-          %td= link_to speaker.name, speaker  
+          %td= link_to speaker.name, speaker
+          %td= speaker.sector
           %td= speaker.phone
           %td= speaker.email
           %td= link_to 'Edit', edit_speaker_path(speaker), class:'btn btn-xs btn-warning'
           %td= link_to 'Destroy', speaker, data: { confirm: 'Are you sure?' }, method: :delete, class:'btn btn-xs btn-danger'
         %tr
-          %td{colspan:5}
+          %td{colspan:6}
             = speaker.description
