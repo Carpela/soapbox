@@ -1,21 +1,18 @@
-%p#notice= notice
+.page-header
+  = link_to speakers_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_speaker_path(@speaker), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show speaker
 
-%p
-  %b Name:
-  = @speaker.name
-%p
-  %b Sector:
-  = @speaker.sector
-%p
-  %b Description:
-  = @speaker.description
-%p
-  %b Phone:
-  = @speaker.phone
-%p
-  %b Email:
-  = @speaker.email
-
-= link_to 'Edit', edit_speaker_path(@speaker)
-\|
-= link_to 'Back', speakers_path
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @speaker.name
+  %dt Description:
+  %dd= @speaker.description
+  %dt Phone:
+  %dd= @speaker.phone
+  %dt Email:
+  %dd= @speaker.email

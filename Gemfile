@@ -50,6 +50,7 @@ end
 
 gem 'administrate'
 gem 'bootstrap-sass'
+gem 'bootstrap-generators'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'

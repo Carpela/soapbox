@@ -1,7 +1,10 @@
-%h1 Editing speaker
+.page-header
+  = link_to speakers_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to @speaker, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-info-sign
+    Show
+  %h1 Editing speaker
 
 = render 'form'
-
-= link_to 'Show', @speaker
-\|
-= link_to 'Back', speakers_path

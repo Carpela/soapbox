@@ -1,5 +1,7 @@
-%h1 New speaker
+.page-header
+  = link_to speakers_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  %h1 New speaker
 
 = render 'form'
-
-= link_to 'Back', speakers_path
